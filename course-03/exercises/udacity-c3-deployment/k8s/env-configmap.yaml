@@ -8,6 +8,7 @@ data:
   POSTGRESS_DB: udagramyogesh
   POSTGRESS_HOST: udagramyogeshdev.cxvnfgc8hwfm.us-east-1.rds.amazonaws.com
   URL: http://localhost:8100
+  API: http://a7e76b072fcb64f6ca689efa78c5b1d8-1167245034.ap-south-1.elb.amazonaws.com:8080
 metadata:
   name: env-config
   
