@@ -22,12 +22,11 @@ before_install:
   - mv config-udacity-yogesh-cluster ~/.kube
   - echo 'export KUBECONFIG=~/.kube/config-udacity-yogesh-cluster' >> ~/.bashrc
   - source ~/.bashrc
-  - echo $KUBECONFIG
-  - cat $(echo $KUBECONFIG)
 
 install:
-  - kubectl get svc
   - docker-compose -f course-03/exercises/udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel 
+  - kubectl apply -f course-03/exercises/udacity-c3-deployment/k8s
+  - kubectl get pods
 
 
 
