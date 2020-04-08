@@ -20,7 +20,7 @@ before_install:
   - echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
   - mkdir ~/.kube
   - mv config-udacity-yogesh-cluster ~/.kube
-  - echo 'export KUBECONFIG=$KUBECONFIG:~/.kube/config-udacity-yogesh-cluster' >> ~/.bashrc
+  - echo 'export KUBECONFIG=~/.kube/config-udacity-yogesh-cluster' >> ~/.bashrc
   - source ~/.bashrc
   - echo $KUBECONFIG
   - cat $(echo $KUBECONFIG)
