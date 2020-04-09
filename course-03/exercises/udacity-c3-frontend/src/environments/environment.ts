@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Udagram',
+  // @ts-ignore
   apiHost: process.env.API + '/api/v0'
 };
 
