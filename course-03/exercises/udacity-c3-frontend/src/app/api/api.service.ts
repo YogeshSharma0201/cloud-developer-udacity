@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { FeedItem } from '../feed/models/feed-item.model';
 import { catchError, tap, map } from 'rxjs/operators';
 
-const API_HOST = environment.apiHost;
+const API_HOST = 'http://a7e76b072fcb64f6ca689efa78c5b1d8-1167245034.ap-south-1.elb.amazonaws.com:8080';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +30,7 @@ export class ApiService {
   }
 
   get(endpoint): Promise<any> {
+    console.log(endpoint, API_HOST);
     const url = `${API_HOST}${endpoint}`;
     const req = this.http.get(url, this.httpOptions).pipe(map(this.extractData));
 
@@ -42,6 +43,7 @@ export class ApiService {
   }
 
   post(endpoint, data): Promise<any> {
+    console.log(endpoint, API_HOST);
     const url = `${API_HOST}${endpoint}`;
     return this.http.post<HttpEvent<any>>(url, data, this.httpOptions)
             .toPromise()
